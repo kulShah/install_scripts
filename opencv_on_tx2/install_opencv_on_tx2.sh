@@ -19,6 +19,7 @@ libjasper-dev \
 libjpeg8-dev \
 libopenblas-dev \
 libpng12-dev \
+libprotobuf-dev \
 libtiff5-dev \
 libswscale-dev \
 libtbb-dev \
@@ -32,6 +33,10 @@ vim \
 wget \
 x264 \
 zip
+
+pip2 install -U pip numpy==1.15 
+&& pip3 install -U pip numpy==1.15 
+&& pip3 install scipy matplotlib scikit-image scikit-learn
 
 # build and install opencv
 cd /opt \
