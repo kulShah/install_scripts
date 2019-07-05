@@ -34,9 +34,12 @@ wget \
 x264 \
 zip
 
-pip2 install -U pip numpy==1.15 
-&& pip3 install -U pip numpy==1.15 
-&& pip3 install scipy matplotlib scikit-image scikit-learn
+update-alternatives --install /usr/bin/python python /usr/bin/python3 10 \
+&& update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10 \
+&& pip install --upgrade pip
+
+python3 -m pip --no-cache-dir install numpy==1.15 \
+&& python3 -m pip --no-cache-dir install scipy matplotlib scikit-image scikit-learn
 
 # build and install opencv
 cd /opt \
