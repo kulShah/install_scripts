@@ -27,15 +27,13 @@ Upon restart, drop into the tty terminal with Ctrl+Alt+Fx (x = 1, 2, 3) and log 
 
 Find the CUDA toolkit runfile you downloaded and run it: `sudo bash ./NAME_OF_RUNFILE.run`<br/>
 
-Follow the prompts to install the driver and CUDA. If the installation fails, you will need to check /var/log/nvidia-installer.log or /var/log/cuda-installer.log to find out why. You can test if the installation was successful by running nvidia-smi.Check the reported driver and CUDA versions
+Follow the prompts to install the driver and CUDA. If the installation fails, you will need to check `/var/log/nvidia-installer.log` or `/var/log/cuda-installer.log` to find out why. You can test if the installation was successful by running nvidia-smi.Check the reported driver and CUDA versions
 
 Leave the tty terminal and return to the gui: Ctrl+Alt+F7
 
 Add the following lines to `~/.bashrc`:<br/>
-`
-export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH<br/>
-export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}<br/>
-export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}<br/>
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH<br/>
-set -o noclobber
-`
+`export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH`<br/>
+`export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}`<br/>
+`export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}`<br/>
+`export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH`<br/>
+`set -o noclobber`
